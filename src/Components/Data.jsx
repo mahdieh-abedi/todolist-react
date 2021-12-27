@@ -65,7 +65,7 @@ const Data = [
   },
   {
     listID: 5,
-    listName: "listening Wishlist",
+    listName: "Listening Wishlist",
     listItem: [
       {
         itemID: 1,
@@ -76,7 +76,7 @@ const Data = [
   },
   {
     listID: 6,
-    listName: "movie Wishlist",
+    listName: "Movie Wishlist",
     listItem: [
       {
         itemID: 1,

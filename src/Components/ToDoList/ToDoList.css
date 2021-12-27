@@ -1,0 +1,23 @@
+.page {
+  display: flex;
+  direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.listCard {
+   border: 3px solid grey;
+   border-radius: 10px;
+}
+
+.listHeader {
+  text-align: center;
+  background-color: rgb(236, 164, 199);
+  padding: 5px;
+  border-radius: auto;
+}
+
+.listItems {
+  text-align: start;
+}
