@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { Data, ToDoList, AddCategory } from "./Components";
+import { Data, ToDoList, AddCategory,Menu } from "./Components";
 import { useState } from "react";
 
 const App = () => {
@@ -8,6 +8,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <Menu/>
       <div className="pageContainer">
       <AddCategory />
       <ToDoList toDoList={toDoList} setToDoList={setToDoList} />

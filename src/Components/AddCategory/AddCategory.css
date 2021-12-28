@@ -1,10 +1,11 @@
 .addCategoryBtn {
     width: 300px;
-    background-color: rgb(83, 131, 95);
+    background-color: rgb(134, 192, 149);
     padding: 5px;
     margin: 0 20px;
     text-align: center;
     border-radius: 20px;
+    padding: 10px;
   }
   .addFormBox {
     display: flex;
