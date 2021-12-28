@@ -8,6 +8,7 @@ import HighlightOffRoundedIcon from "@mui/icons-material/HighlightOffRounded";
 import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
 
 const ToDoList = ({ toDoList, setToDoList }) => {
+  
   const handleDeleteCategory=(id)=>{
     setToDoList(toDoList.filter(item=>item.listID!==id))
 

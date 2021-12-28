@@ -3,7 +3,6 @@ import "./AddCategory.css"
 import { useState } from "react";
 
 import { ClickAwayListener,TextField} from "@mui/material";
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
 
 const AddCategory=()=>{
     const [open, setOpen] = useState(false);

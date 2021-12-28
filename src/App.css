@@ -9,5 +9,9 @@
 
 .pageContainer{
   width:85%;
-  padding: 10px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
 }
