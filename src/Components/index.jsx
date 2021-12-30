@@ -5,6 +5,9 @@ import Menu from "./Menu/Menu";
 import ToDoListPage from "./ToDoListPage/ToDoListPage";
 import AboutUsPage from "./AboutUsPage/AboutUsPage";
 import HomePage from "./HomePage/HomePage";
+import ToggleMode from "./ToggleMode/ToggleMode";
+import MenuTabs from "./MenuTabs/MenuTabs";
+import AddNewItem from "./AddNewItem/AddNewItem";
 
 export {
   Data,
@@ -14,4 +17,7 @@ export {
   ToDoListPage,
   AboutUsPage,
   HomePage,
+  ToggleMode,
+  MenuTabs,
+  AddNewItem,
 };

@@ -1,13 +1,13 @@
 import "./ToDoListPage.css";
 
-import {ToDoList, AddCategory , Menu } from "..";
+import {ToDoList, AddCategory } from "..";
 
-const ToDoListPage = (props) => {
+const ToDoListPage = ({toDoList,setToDoList}) => {
   return (
     <div className="page">
       <div className="pageContainer">
-      <AddCategory />
-      <ToDoList {...props} />
+      <AddCategory toDoList={toDoList} setToDoList={setToDoList}/>
+      <ToDoList toDoList={toDoList} setToDoList={setToDoList} />
       </div>
     </div>
   

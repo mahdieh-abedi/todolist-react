@@ -25,7 +25,10 @@
   width: 90%;
   display: inline-block;
 }
-
+.ItemContainer{
+  height:200px;
+  background-color: rgb(241, 213, 227);
+}
 .listItems {
   display: flex;
   flex-direction: row;
@@ -33,6 +36,5 @@
   align-items: center;
   text-align: start;
   padding: 0 10px;
-  background-color: rgb(241, 213, 227);
 }
 

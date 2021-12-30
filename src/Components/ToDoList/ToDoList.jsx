@@ -2,17 +2,17 @@ import "./ToDoList.css";
 
 import { FormGroup, Checkbox, Grid } from "@mui/material";
 
+import {AddNewItem} from ".."
+
 import RadioButtonCheckedRoundedIcon from "@mui/icons-material/RadioButtonCheckedRounded";
 import RadioButtonUncheckedRoundedIcon from "@mui/icons-material/RadioButtonUncheckedRounded";
 import HighlightOffRoundedIcon from "@mui/icons-material/HighlightOffRounded";
 import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
 
 const ToDoList = ({ toDoList, setToDoList }) => {
-  
-  const handleDeleteCategory=(id)=>{
-    setToDoList(toDoList.filter(item=>item.listID!==id))
-
-  }
+  const handleDeleteCategory = (id) => {
+    setToDoList(toDoList.filter((item) => item.listID !== id));
+  };
 
   return (
     <Grid container spacing={5} className="page">
@@ -22,13 +22,15 @@ const ToDoList = ({ toDoList, setToDoList }) => {
             <div className="header">
               <h3 className="headerTitle">{list.listName}</h3>
               <span>
-                <DeleteOutlineRoundedIcon onClick={()=>handleDeleteCategory(list.listID)}/>
+                <DeleteOutlineRoundedIcon
+                  onClick={() => handleDeleteCategory(list.listID)}
+                />
               </span>
             </div>
-            <FormGroup>
+            <FormGroup className="ItemContainer">
               {list.listItem.map((item) => (
                 <div className="listItems">
-                  <div key={list.listID * 10 + item.itemID}>
+                  <div key={list.listID * 100 + item.itemID}>
                     <Checkbox
                       icon={
                         <RadioButtonUncheckedRoundedIcon fontSize="large" />
@@ -48,6 +50,7 @@ const ToDoList = ({ toDoList, setToDoList }) => {
                 </div>
               ))}
             </FormGroup>
+            <AddNewItem/>
           </div>
         </Grid>
       ))}

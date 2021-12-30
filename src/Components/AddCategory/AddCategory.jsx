@@ -3,17 +3,20 @@ import "./AddCategory.css"
 import { useState } from "react";
 
 import { ClickAwayListener,TextField} from "@mui/material";
+import { Form } from "react-bootstrap";
 
-const AddCategory=()=>{
+const AddCategory=(props)=>{
     const [open, setOpen] = useState(false);
 
     const handleClick = () => {
       setOpen((prev) => !prev);
     };
   
-    const handleClickAway = () => {
+    const handleClickAway = (props) => {
       setOpen(false);
     }; 
+
+   
     return(
         <ClickAwayListener
         mouseEvent="onMouseDown"
@@ -26,8 +29,9 @@ const AddCategory=()=>{
           </button>
           {open ? (
             <div className="addFormBox">
-              <TextField color="success" focused className="addFormItems"/>
-              
+              <Form>
+              <TextField color="success" focused className="addFormItems" onChange={(e) => props.setToDoList(e.target.value)}/>
+              </Form>
             </div>
           ) : null}
         </div>
