@@ -1,7 +1,7 @@
 import "./ToDoItems.css";
 
 import { AddNewItem } from "..";
-import { FormGroup, Checkbox, Grid } from "@mui/material";
+import { , Checkbox, Grid } from "@mui/material";
 
 import RadioButtonCheckedRoundedIcon from "@mui/icons-material/RadioButtonCheckedRounded";
 import RadioButtonUncheckedRoundedIcon from "@mui/icons-material/RadioButtonUncheckedRounded";
@@ -25,7 +25,7 @@ const ToDoItems = ({ list, toDoList, setToDoList}) => {
     <>
       {list.listItem.map((item) => (
         <div className="listItems">
-          <div key={`${list.listID}-${item.itemID}`}>
+          <div key={`${list.listID}-${item.id}`}>
             <Checkbox
               icon={<RadioButtonUncheckedRoundedIcon fontSize="large" />}
               checkedIcon={
