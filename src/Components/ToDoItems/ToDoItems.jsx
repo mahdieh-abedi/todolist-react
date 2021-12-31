@@ -1,7 +1,6 @@
 import "./ToDoItems.css";
 
-import { AddNewItem } from "..";
-import { , Checkbox, Grid } from "@mui/material";
+import {Checkbox } from "@mui/material";
 
 import RadioButtonCheckedRoundedIcon from "@mui/icons-material/RadioButtonCheckedRounded";
 import RadioButtonUncheckedRoundedIcon from "@mui/icons-material/RadioButtonUncheckedRounded";
