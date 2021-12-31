@@ -8,14 +8,7 @@ import { Data, Menu, ToDoListPage, HomePage } from "./Components";
 
 const App = () => {
   const [toDoList, setToDoList] = useState(
-    JSON.parse(localStorage.getItem("Data")) || Data
-  );
-
-  const [newCategory, setNewCategory] = useState({
-    listID: "",
-    listName: "",
-    listItem: [],
-  });
+    JSON.parse(localStorage.getItem("Data")) ||Data);
 
   useEffect(() => {
     document.title = "Weekly Planner";
@@ -33,8 +26,6 @@ const App = () => {
               <ToDoListPage
                 toDoList={toDoList}
                 setToDoList={setToDoList}
-                newCategory={newCategory}
-                setNewCategory={setNewCategory}
               />
             }
           />
