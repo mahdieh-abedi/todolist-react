@@ -1,6 +1,7 @@
 import "./ToDoList.css";
 
 import {ToDoItems } from "..";
+import { Types } from "../../ReducerContext/reducer";
 
 import { FormGroup, Grid } from "@mui/material";
 
@@ -8,7 +9,7 @@ import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
 
 const ToDoList = ({ toDoList, setToDoList }) => {
   const handleDeleteCategory = (id) => {
-    setToDoList(toDoList.filter((item) => item.listID !== id));
+    dispatch({ type: Types.DeleteCategory, payload: { id } })
   };
   return (
     <Grid container spacing={5} className="page">
