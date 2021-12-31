@@ -1,6 +1,6 @@
 import "./ToDoList.css";
 
-import {ToDoItems } from "..";
+import {ToDoItems,AddNewItem } from "..";
 
 import { FormGroup, Grid } from "@mui/material";
 
@@ -26,6 +26,7 @@ const ToDoList = ({ toDoList, setToDoList }) => {
             <FormGroup className="ItemContainer">
               <ToDoItems list={list} toDoList={toDoList} setToDoList={setToDoList}/>
             </FormGroup>
+            <AddNewItem list={list}  toDoList={toDoList} setToDoList={setToDoList}/>
           </div>
         </Grid>
       ))}

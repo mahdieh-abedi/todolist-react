@@ -1,12 +1,17 @@
 import "./AddCategory.css";
 
-import { useState } from "react";
-
 import { Form } from "react-bootstrap";
+
+import { useState } from "react";
 
 import { ClickAwayListener, TextField } from "@mui/material";
 
-const AddCategory = ({toDoList,setToDoList,setNewCategory,newCategory}) => {
+const AddCategory = ({
+  toDoList,
+  setToDoList,
+  newCategory,
+  setNewCategory,
+}) => {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -19,15 +24,17 @@ const AddCategory = ({toDoList,setToDoList,setNewCategory,newCategory}) => {
 
   const handleAddCategory = (e) => {
     e.preventDefault();
-    if(!newCategory.listID){
-    setToDoList([...toDoList,{
-      listID: Math.floor(Math.random() * 10000),...newCategory
-    }])
-  }
-    setNewCategory({    
-    listID: "",
-    listName: "",
-    listItem: []})
+    setToDoList([
+      ...toDoList,
+      {
+        listID: Math.floor(Math.random() * 10000),
+        ...newCategory,
+      },
+    ]);
+    setNewCategory({
+      listName: "",
+      listItem: [],
+    });
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -62,4 +69,4 @@ const AddCategory = ({toDoList,setToDoList,setNewCategory,newCategory}) => {
     </ClickAwayListener>
   );
 };
-export default AddCategory
+export default AddCategory;

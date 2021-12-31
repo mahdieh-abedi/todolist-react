@@ -7,7 +7,7 @@ import RadioButtonCheckedRoundedIcon from "@mui/icons-material/RadioButtonChecke
 import RadioButtonUncheckedRoundedIcon from "@mui/icons-material/RadioButtonUncheckedRounded";
 import HighlightOffRoundedIcon from "@mui/icons-material/HighlightOffRounded";
 
-const ToDoItems = ({ list, toDoList, setToDoList }) => {
+const ToDoItems = ({ list, toDoList, setToDoList}) => {
   const handleDeleteItem = (listId, ItemId) => {
     setToDoList(
       toDoList.map((list) =>
@@ -25,7 +25,7 @@ const ToDoItems = ({ list, toDoList, setToDoList }) => {
     <>
       {list.listItem.map((item) => (
         <div className="listItems">
-          <div key={list.listID * 100 + item.itemID}>
+          <div key={`${list.listID}-${item.itemID}`}>
             <Checkbox
               icon={<RadioButtonUncheckedRoundedIcon fontSize="large" />}
               checkedIcon={
@@ -48,7 +48,6 @@ const ToDoItems = ({ list, toDoList, setToDoList }) => {
           </span>
         </div>
       ))}
-      <AddNewItem list={list} toDoList={toDoList} setToDoList={toDoList} />
     </>
   );
 };
