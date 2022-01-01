@@ -8776,6 +8776,11 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
+use-local-storage@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/use-local-storage/-/use-local-storage-2.2.5.tgz#58513ab8fca52efba648e824be8d1cbf89496bed"
+  integrity sha512-KY+9wkIFHnLpBcRrIcXAhjgcjaJtWF8YGJhlZrLXaAxICXiKamtYVzHMVOj+d0Ph3yUusbYh9AmMq+BSzCfegA==
+
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
