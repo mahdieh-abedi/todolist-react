@@ -1,9 +1,9 @@
 import React, { useState, createContext,useEffect } from "react";
 import {Data} from "..";
 
-export const TodoContext = createContext({toDoList:[] , setToDoList:(input)=>{}});
+export const ToDoListContext = createContext({toDoList:[] , setToDoList:(input)=>{}});
 
-const TodoContextProvider = ({ children }) => {
+const ToDoListContextProvider = ({ children }) => {
   const [toDoList, setToDoList] = useState(
     JSON.parse(localStorage.getItem("Data")) ||Data
   );
@@ -13,7 +13,7 @@ const TodoContextProvider = ({ children }) => {
   }, [toDoList]);
 
   return (
-    <TodoContext.Provider value={{toDoList,setToDoList}}>{children}</TodoContext.Provider>
+    <ToDoListContext.Provider value={{toDoList,setToDoList}}>{children}</ToDoListContext.Provider>
   );
 };
-export default TodoContextProvider;
+export default ToDoListContextProvider;

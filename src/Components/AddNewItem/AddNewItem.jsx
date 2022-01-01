@@ -1,20 +1,17 @@
 import "./AddNewItem.css";
 
-import { useState,useContext} from "react";
+import {useContext } from "react";
 
-import {TodoContext} from "..";
+import { ToDoContext,ToDoListContext } from "..";
 
 import { Form } from "react-bootstrap";
 
 import { TextField } from "@mui/material";
 
-const AddNewItem = ({list }) => {
-  const{toDoList,setToDoList}=useContext(TodoContext)
+const AddNewItem = ({ list }) => {
+  const { toDoList, setToDoList } = useContext(ToDoListContext);
+  const { newItem, setNewItem } = useContext(ToDoContext);
 
-  const [newItem, setNewItem] = useState({
-    status: false,
-    itemTitle: "",
-  });
   const handleAddItem = () => {
     setToDoList(
       toDoList.map((item) =>
@@ -23,7 +20,7 @@ const AddNewItem = ({list }) => {
               ...item,
               listItem: [
                 ...item.listItem,
-                {itemID: Math.floor(Math.random() * 10000),...newItem},
+                { itemID: Math.floor(Math.random() * 10000), ...newItem },
               ],
             }
           : item

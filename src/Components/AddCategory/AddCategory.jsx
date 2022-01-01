@@ -4,19 +4,14 @@ import { Form } from "react-bootstrap";
 
 import { useState, useContext } from "react";
 
-import { TodoContext} from "..";
+import { ToDoListContext,CategoryContext} from "..";
 
 import { ClickAwayListener, TextField } from "@mui/material";
 
 const AddCategory = () => {
-  const { toDoList, setToDoList } = useContext(TodoContext);
+  const { toDoList, setToDoList } = useContext(ToDoListContext);
+  const{newCategory,setNewCategory}=useContext(CategoryContext)
 
-  const [newCategory, setNewCategory] = useState({
-    listID: "",
-    listName: "",
-    listItem: [],
-  });
-  
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
