@@ -1,12 +1,18 @@
 import "./ToDoItems.css";
 
+import React, { useContext } from "react";
+
+import {TodoContext} from "..";
+
 import { Checkbox } from "@mui/material";
 
 import RadioButtonCheckedRoundedIcon from "@mui/icons-material/RadioButtonCheckedRounded";
 import RadioButtonUncheckedRoundedIcon from "@mui/icons-material/RadioButtonUncheckedRounded";
 import HighlightOffRoundedIcon from "@mui/icons-material/HighlightOffRounded";
 
-const ToDoItems = ({ list, toDoList, setToDoList }) => {
+const ToDoItems = ({ list}) => {
+  const{toDoList,setToDoList}=useContext(TodoContext)
+
   const handleDeleteItem = (listId, ItemId) => {
     setToDoList(
       toDoList.map((list) =>
@@ -66,7 +72,7 @@ const ToDoItems = ({ list, toDoList, setToDoList }) => {
           </span>
         </div>
       ))}
-    </>
+      </>
   );
 };
 

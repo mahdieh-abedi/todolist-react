@@ -1,15 +1,20 @@
 import "./ToDoList.css";
 
-import {ToDoItems,AddNewItem } from "..";
+import React, { useContext } from "react";
+
+import {ToDoItems,AddNewItem,TodoContext} from "..";
 
 import { FormGroup, Grid } from "@mui/material";
 
 import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
 
-const ToDoList = ({ toDoList, setToDoList }) => {
+const ToDoList = () => {
+  const{toDoList,setToDoList}=useContext(TodoContext)
+
   const handleDeleteCategory = (id) => {
     setToDoList(toDoList.filter(item=>item.listID!==id))
   };
+
   return (
     <Grid container spacing={5} className="page">
       {toDoList.map((list) => (
@@ -24,9 +29,9 @@ const ToDoList = ({ toDoList, setToDoList }) => {
               </span>
             </div>
             <FormGroup className="ItemContainer">
-              <ToDoItems list={list} toDoList={toDoList} setToDoList={setToDoList}/>
+              <ToDoItems list={list}/>
             </FormGroup>
-            <AddNewItem list={list}  toDoList={toDoList} setToDoList={setToDoList}/>
+            <AddNewItem list={list}/>
           </div>
         </Grid>
       ))}

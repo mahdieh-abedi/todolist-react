@@ -1,12 +1,16 @@
 import "./AddNewItem.css";
 
-import { useState } from "react";
+import { useState,useContext} from "react";
+
+import {TodoContext} from "..";
 
 import { Form } from "react-bootstrap";
 
 import { TextField } from "@mui/material";
 
-const AddNewItem = ({ toDoList, setToDoList, list }) => {
+const AddNewItem = ({list }) => {
+  const{toDoList,setToDoList}=useContext(TodoContext)
+
   const [newItem, setNewItem] = useState({
     status: false,
     itemTitle: "",

@@ -2,16 +2,21 @@ import "./AddCategory.css";
 
 import { Form } from "react-bootstrap";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
+
+import { TodoContext} from "..";
 
 import { ClickAwayListener, TextField } from "@mui/material";
 
-const AddCategory = ({
-  toDoList,
-  setToDoList,
-  newCategory,
-  setNewCategory,
-}) => {
+const AddCategory = () => {
+  const { toDoList, setToDoList } = useContext(TodoContext);
+
+  const [newCategory, setNewCategory] = useState({
+    listID: "",
+    listName: "",
+    listItem: [],
+  });
+  
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -41,32 +46,36 @@ const AddCategory = ({
     setNewCategory({ ...newCategory, [name]: value });
   };
   return (
-    <ClickAwayListener
-      mouseEvent="onMouseDown"
-      touchEvent="onTouchStart"
-      onClickAway={handleClickAway}
-    >
-      <div sx={{ position: "relative" }}>
-        <button type="button" className="addCategoryBtn" onClick={handleClick}>
-          <h3>Add New Category</h3>
-        </button>
-        {open ? (
-          <div className="addFormBox">
-            <Form onSubmit={handleAddCategory}>
-              <TextField
-                color="success"
-                focused
-                className="addFormItems"
-                type="text"
-                name={"listName"}
-                value={newCategory.listName}
-                onChange={handleChange}
-              />
-            </Form>
-          </div>
-        ) : null}
-      </div>
-    </ClickAwayListener>
+      <ClickAwayListener
+        mouseEvent="onMouseDown"
+        touchEvent="onTouchStart"
+        onClickAway={handleClickAway}
+      >
+        <div sx={{ position: "relative" }}>
+          <button
+            type="button"
+            className="addCategoryBtn"
+            onClick={handleClick}
+          >
+            <h3>Add New Category</h3>
+          </button>
+          {open ? (
+            <div className="addFormBox">
+              <Form onSubmit={handleAddCategory}>
+                <TextField
+                  color="success"
+                  focused
+                  className="addFormItems"
+                  type="text"
+                  name={"listName"}
+                  value={newCategory.listName}
+                  onChange={handleChange}
+                />
+              </Form>
+            </div>
+          ) : null}
+        </div>
+      </ClickAwayListener>
   );
 };
 export default AddCategory;

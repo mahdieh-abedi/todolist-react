@@ -8,7 +8,7 @@ import ToggleMode from "./ToggleMode/ToggleMode";
 import MenuTabs from "./MenuTabs/MenuTabs";
 import AddNewItem from "./AddNewItem/AddNewItem";
 import ToDoItems from "./ToDoItems/ToDoItems";
-
+import TodoContextProvider,{TodoContext} from "./Context/ToDoListContext";
 
 export {
   Data,
@@ -21,4 +21,6 @@ export {
   MenuTabs,
   AddNewItem,
   ToDoItems,
+  TodoContext,
+  TodoContextProvider,
 };
