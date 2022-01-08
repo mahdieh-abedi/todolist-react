@@ -2,7 +2,7 @@ import "./ToDoItems.css";
 
 import React, { useContext } from "react";
 
-import {ToDoListContext} from "..";
+import {ToDoListContext} from "../..";
 
 import { Checkbox } from "@mui/material";
 
